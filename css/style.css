@@ -1,0 +1,748 @@
+@import url("https://use.typekit.net/dcc2rab.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: futura-pt, sans-serif;
+
+}
+
+.header {
+    width: 100%;
+    background: #235474;
+    padding: 18px 0;
+
+    /* レイヤー */
+    z-index: 10;
+    /* z-indexの計算をさせる */
+    position: relative;
+
+}
+
+.header .header-inner {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+
+    /* 並列のレイアウトボックスができる */
+    display: flex; 
+
+    /* space-betweenすると、3つの要素を横幅の範囲内で3等分して配置している */
+    justify-content: space-between;
+
+    /* align-items: center; だと水平方向に中央揃えできる */
+    align-items: center; 
+}
+
+.gNav ul{
+    display: flex;
+
+    /* リストのポチが消える */
+    list-style: none;
+}
+
+.gNav ul li{
+    margin-right: 20px;
+}
+
+.gNav ul li a{
+    color: #fff;
+
+    /* リンクの下線を消す */
+    text-decoration: none;
+}
+
+h1{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-icon a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+}
+
+.header-icon a .fa-envelope{
+    font-size: 28px;
+}
+
+.keyVis {
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.keyVis .keyVis-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.keyVis .keyVis-txt h2{
+    font-size: 48px;
+    margin-bottom: 60px;
+}
+
+.keyVis .keyVis-txt p{
+    font-size: 20px;
+}
+
+.home{
+    padding: 80px 0;
+    background-color: #032b45;
+}
+
+.container {
+    width: 90%;
+
+    /* 横幅の最大値 */
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.work-list{
+    display: flex;
+
+    /* 改行 */
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.work-list .work-list-item{
+    width: 33%;
+    margin-bottom: 40px;
+    position: relative;
+
+    padding: 0 2%;
+}
+
+.work-list .work-list-item .work-list-item-img{
+    width: 100%;
+    border-radius: 50%;
+
+    /* はみ出た部分を消す */
+    overflow: hidden;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.work-list .work-list-item .work-list-item-img:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+    z-index: -1;
+}
+
+/* 画像にマウスをかざしたときに　hover：疑似クラス */
+.work-list .work-list-item .work-list-item-img:hover a {
+
+    /* 透明度を表す */
+    opacity: 1;
+
+    /* 表示する */
+    visibility: visible;
+}
+
+.work-list .work-list-item .work-list-item-img img{
+    width: 180%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.work-list .work-list-item a{
+    position: absolute;
+    font-size: 38px;
+    font-weight: lighter;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+
+    /* 全体の横方向の揃え位置がセンター位置になるように */
+    justify-content: center;
+
+    /* 全体の縦方向の揃え位置がセンター位置にあるように */
+    align-items: center;
+
+    color: #fff;
+    text-decoration: none;
+    
+    /* 不透明度 */
+    opacity: 0;
+
+    /* 非表示にしておく */
+    visibility: hidden;
+
+    /* 0.4秒かけてアニメーションする */
+    transition: 0.4s all;
+
+    z-index: 2;
+}
+
+.footer{
+    color: #fff;
+    background-color: #032b45;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* About Page */
+.about {
+    background-image: url("../img/about.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+
+    position: relative;
+}
+
+/* オーバレイ */
+.about:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.about .about-content{
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.about .sub-title{
+    margin-bottom: 40px;
+}
+
+.about .info {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about .about-content h2{
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.about .about-content h2:after{
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    top: -1;
+    left: 0;
+    content: "";
+    width: 13%;
+    height: 8%;
+}
+
+.about .about-content dl{
+    margin-top: 20px;
+}
+
+.about .about-content dl dt {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-left: 20px;
+}
+
+.about .about-content dl dd {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.about .about-content dl .use-soft{
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.about .about-content dl .about-myself{
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.about .img{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+
+/* box page */
+
+.box-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/box.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.box-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 0, 53, 0.6);
+    color: #fff;
+}
+
+.p-home{
+    margin-top: 65vh;
+    margin-bottom: 90px;
+}
+
+.p-home .p-container{
+    width: 90%;
+
+    /* 横幅の最大値 */
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.p-home .p-container .p-about{
+    width: 420px;
+    margin: 38px auto;
+
+}
+
+.p-home .p-container .p-about section{
+    text-align: center;
+}
+
+.p-home .p-about h3{
+    font-weight: lighter;
+    font-size: 42px;
+    line-height: 23px; 
+    text-align: center;
+    color: #333;
+}
+
+.p-home .p-about .box-subtitle{
+    padding-top: 22px;
+    color: rgb(202, 102, 233);
+    line-height: 18px;
+}
+
+.p-home .p-about .p-main{
+    margin-top: 18px; 
+    text-align: left;
+    line-height: 38px;
+    color: #333;
+}
+
+.p-home .p-container .p-img{
+    margin: 38px auto;
+}
+
+.p-footer{
+    background-color: #235474;
+    padding-top: 48px;
+}
+
+
+/* line page */
+
+.line-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/line.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.line-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 32, 71, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .line-subtitle{
+    padding-top: 22px;
+    color: rgb(241, 175, 76);
+    line-height: 18px;
+}
+
+
+/* triangle page */
+
+.ta-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/triangle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.ta-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 15, 0, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .ta-subtitle{
+    padding-top: 22px;
+    color: rgb(112, 68, 1);
+    line-height: 18px;
+}
+
+
+
+/* ink page */
+
+.ink-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/ink.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.ink-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(71, 1, 73, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .ink-subtitle{
+    padding-top: 22px;
+    color: rgb(209, 86, 203);
+    line-height: 18px;
+}
+
+
+
+/* kara page */
+
+.kara-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/KARA.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.kara-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 1, 1, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .kara-subtitle{
+    padding-top: 22px;
+    color: rgb(223, 72, 61);
+    line-height: 18px;
+}
+
+
+/* earth page */
+
+.ea-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/earth.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.ea-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(113, 216, 207, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .ea-subtitle{
+    padding-top: 22px;
+    color: rgb(47, 201, 162);
+    line-height: 18px;
+}
+
+
+/* agony page */
+
+.ag-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/agony.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.ag-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(105, 143, 175, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .ag-subtitle{
+    padding-top: 22px;
+    color: rgb(65, 158, 235);
+    line-height: 18px;
+}
+
+
+/* alive page */
+
+.a-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.a-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 27, 1, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .a-subtitle{
+    padding-top: 22px;
+    color: rgb(78, 160, 71);
+    line-height: 18px;
+}
+
+
+/* curl-noise page */
+
+.cn-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/curl-noise.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.cn-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(95, 86, 0, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .cn-subtitle{
+    padding-top: 22px;
+    color: rgb(202, 182, 4);
+    line-height: 18px;
+}
+
+
+/* life-zero page */
+
+.ze-keyVis{
+
+    /* ポジションを相対的に 　基本、親要素につける*/
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/life-zero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 背景固定 */
+    background-attachment: fixed;
+
+}
+
+.ze-overlay {
+
+    /* 絶対的位置 */
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 72, 72, 0.6);
+    color: #fff;
+}
+
+.p-home .p-about .ze-subtitle{
+    padding-top: 22px;
+    color: rgb(167, 164, 164);
+    line-height: 18px;
+}
+
