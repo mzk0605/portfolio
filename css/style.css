@@ -138,7 +138,7 @@ h1{
 .work-list{
     display: flex;
 
-    /* 改行 */
+    /* 折り返しして上から下へ複数行つくる */
     flex-wrap: wrap;
     list-style: none;
 }
@@ -159,10 +159,13 @@ h1{
     overflow: hidden;
 
     position: relative;
+
+    /* boxの重なりの順序を指定する　レイヤー */
     z-index: 1;
 
 }
 
+/* 要素の直前に内容を挿入する際に・・・ */
 .work-list .work-list-item .work-list-item-img:before{
     content: "";
     display: block;
@@ -180,13 +183,13 @@ h1{
     visibility: visible;
 }
 
+/* 円の画像の設定 */
 .work-list .work-list-item .work-list-item-img img{
     width: 180%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
 }
 
 .work-list .work-list-item a{
@@ -232,11 +235,12 @@ h1{
 .about {
     background-image: url("../img/about.jpg");
     background-repeat: no-repeat;
+
+    /* 画面全体に */
     background-size: cover;
+
     background-attachment: fixed;
     min-height: 100vh;
-
-
     position: relative;
 }
 
@@ -298,19 +302,19 @@ h1{
 .about .about-content dl dd {
     font-size: 16px;
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .about .about-content dl .use-soft{
     font-size: 16px;
     margin-bottom: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 .about .about-content dl .about-myself{
     font-size: 16px;
     margin-bottom: 20px;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 .about .img{
